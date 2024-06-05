@@ -1,0 +1,293 @@
+import time
+
+from pageObjects.Login_Page import Login_Class
+from utilities.Logger import LoggingClass
+from utilities  import XLUTILIES
+
+
+class Test_Credkart_Login_Params:
+    log = LoggingClass.log_generator()
+    path = ".\\Test_Data\\UserLogin.xlsx"
+
+    def test_user_login_Params_003(self,setup,getDataForLogin):
+        self.log.info("Testcase - test_user_login_Params_003 is started")
+        self.log.info("Opening browser")
+        self.driver = setup
+        self.lg = Login_Class(self.driver)
+        self.log.info("Opening login link")
+        self.lg.Login_Link()
+        self.log.info("Entering email")
+        self.lg.Enter_Email(getDataForLogin[0])
+        self.log.info("Entering password")
+        self.lg.Enter_Password(getDataForLogin[1])
+        self.log.info("Clicking on login button")
+        self.lg.Click_Login_Button()
+        if getDataForLogin[2] == 'Login_Pass' and self.lg.Verify_Login() == 'pass':
+            assert True
+        elif getDataForLogin[2] == 'Login_Pass' and self.lg.Verify_Login() == 'fail':
+            assert False
+        elif getDataForLogin[2] == 'Login_Fail' and self.lg.Verify_Login() == 'pass':
+            assert False
+        elif getDataForLogin[2] == 'Login_Fail' and self.lg.Verify_Login() == 'fail':
+            assert True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
